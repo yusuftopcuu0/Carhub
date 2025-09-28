@@ -2,19 +2,21 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import { useAuth } from "../auth/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const handleLogin = () => {
-    if (!email || !password) {
-      alert("Please enter email and password");
+    if (!email || !password || !name) {
+      toast.error("Please enter email, password and name");
       return;
     }
-
+    toast.success("Login successful");
     const fakeUser = {
       id: "1",
       name: "Yusuf",
@@ -37,6 +39,13 @@ function Login() {
           variant="outlined"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+        />
+        <TextField
+          label="Name"
+          type="text"
+          variant="outlined"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <TextField
           label="Password"

@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Logo from "../images/carhub-logo.png";
 import { useAuth } from "../auth/useAuth";
 
@@ -9,9 +9,6 @@ function Navbar() {
       <Box className="flex items-center justify-between">
         <img src={Logo} alt="Logo" width={150} />
 
-        <Box>
-          <TextField label="Search" variant="outlined" />
-        </Box>
         <Box className="flex items-center gap-5">
           <Button variant="contained">Home</Button>
           <Button>Create</Button>

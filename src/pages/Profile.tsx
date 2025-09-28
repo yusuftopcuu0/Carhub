@@ -6,7 +6,7 @@ function Profile() {
   const { user, logout } = useAuth();
 
   return (
-    <Box>
+    <Box className="flex flex-col items-center gap-2 pt-5">
       <Typography variant="h4">Profile</Typography>
       <Box>
         <Typography variant="h6">Name: {user?.name}</Typography>
